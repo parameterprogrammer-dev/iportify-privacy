@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — iPortify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #6B8AFD;
+      --accent-bg: #EEF2FF;
+      --text: #1E293B;
+      --sub: #64748B;
+      --bg: #FAFBFE;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+      --success: #34D399;
+      --danger: #F87171;
+      --radius: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+    .hero {
+      background: linear-gradient(135deg, #6366F1 0%, #818CF8 50%, #6B8AFD 100%);
+      color: white; padding: 60px 24px 48px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -60%; left: -30%;
+      width: 160%; height: 160%;
+      background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
+    }
+    .hero-logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-bottom: 20px; position: relative;
+    }
+    .hero-logo .icon {
+      width: 44px; height: 44px; background: rgba(255,255,255,0.2);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 22px; backdrop-filter: blur(10px);
+    }
+    .hero-logo span { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 40px); font-weight: 700;
+      margin-bottom: 8px; position: relative; letter-spacing: -0.03em;
+    }
+    .hero p { opacity: 0.85; font-size: 14px; position: relative; }
+    .lang-switch {
+      position: absolute; top: 20px; right: 20px;
+      display: flex; gap: 4px; background: rgba(255,255,255,0.15);
+      border-radius: 10px; padding: 3px; backdrop-filter: blur(10px);
+    }
+    .lang-btn {
+      padding: 6px 14px; border: none; background: transparent;
+      color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600;
+      border-radius: 8px; cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .lang-btn.active { background: white; color: var(--accent); }
+    .container { max-width: 740px; margin: 0 auto; padding: 32px 20px 80px; }
+    .toc {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 28px; margin-bottom: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .toc h3 { font-size: 14px; color: var(--sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500; transition: opacity 0.2s; }
+    .toc a:hover { opacity: 0.7; }
+    .section {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px; margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .section h2 {
+      font-size: 18px; font-weight: 700; color: var(--accent);
+      margin-bottom: 14px; display: flex; align-items: center;
+      gap: 10px; letter-spacing: -0.02em;
+    }
+    .section h2 .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; background: var(--accent-bg); color: var(--accent);
+      border-radius: 9px; font-size: 13px; font-weight: 700; flex-shrink: 0;
+    }
+    .section p, .section li { font-size: 14px; color: var(--sub); margin-bottom: 10px; }
+    .section ul { padding-left: 20px; margin-bottom: 12px; }
+    .section li { margin-bottom: 6px; }
+    .badge {
+      display: inline-block; padding: 3px 10px; background: #FEF3C7;
+      color: #B45309; border-radius: 6px; font-size: 12px; font-weight: 600;
+    }
+    .badge-red {
+      display: inline-block; padding: 3px 10px; background: #FEE2E2;
+      color: #DC2626; border-radius: 6px; font-size: 12px; font-weight: 600;
+    }
+    .footer {
+      text-align: center; padding: 32px 20px; color: var(--sub);
+      font-size: 12px; border-top: 1px solid var(--border);
+    }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .links {
+      display: flex; justify-content: center; gap: 20px; margin-top: 16px;
+    }
+    .links a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; background: var(--accent-bg); color: var(--accent);
+      border-radius: 10px; font-size: 13px; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .links a:hover { background: var(--accent); color: white; }
+    [data-lang="en"] { display: none; }
+    @media (max-width: 480px) { .section { padding: 20px; } .toc { padding: 18px; } }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="lang-switch">
+    <button class="lang-btn active" onclick="setLang('th')">TH</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+  <div class="hero-logo">
+    <div class="icon">📊</div>
+    <span>iPortify</span>
+  </div>
+  <h1 data-lang="th">เงื่อนไขการใช้บริการ</h1>
+  <h1 data-lang="en">Terms of Service</h1>
+  <p data-lang="th">มีผลบังคับใช้: 1 มีนาคม 2026</p>
+  <p data-lang="en">Effective: March 1, 2026</p>
+</div>
+
+<div class="container">
+
+  <!-- Thai -->
+  <div data-lang="th">
+
+    <div class="toc">
+      <h3>สารบัญ</h3>
+      <ol>
+        <li><a href="#th1">การยอมรับเงื่อนไข</a></li>
+        <li><a href="#th2">คำอธิบายบริการ</a></li>
+        <li><a href="#th3">บัญชีผู้ใช้</a></li>
+        <li><a href="#th4">แผนบริการ (Free / Pro)</a></li>
+        <li><a href="#th5">ข้อจำกัดการใช้งาน</a></li>
+        <li><a href="#th6">ทรัพย์สินทางปัญญา</a></li>
+        <li><a href="#th7">ข้อจำกัดความรับผิดชอบ</a></li>
+        <li><a href="#th8">การยกเลิกและลบบัญชี</a></li>
+        <li><a href="#th9">การเปลี่ยนแปลงเงื่อนไข</a></li>
+        <li><a href="#th10">กฎหมายที่ใช้บังคับ</a></li>
+        <li><a href="#th11">ติดต่อเรา</a></li>
+      </ol>
+    </div>
+
+    <div class="section" id="th1">
+      <h2><span class="num">1</span> การยอมรับเงื่อนไข</h2>
+      <p>การใช้แอปพลิเคชัน iPortify ถือว่าคุณยอมรับเงื่อนไขทั้งหมดในเอกสารนี้ หากไม่ยอมรับ กรุณาหยุดใช้แอปทันที</p>
+      <p>ผู้ใช้ต้องมีอายุ 18 ปีขึ้นไป หรือได้รับความยินยอมจากผู้ปกครอง</p>
+    </div>
+
+    <div class="section" id="th2">
+      <h2><span class="num">2</span> คำอธิบายบริการ</h2>
+      <p>iPortify เป็นแอปพลิเคชันสำหรับ <strong>บันทึกและจัดการข้อมูลสินทรัพย์และหนี้สิน</strong> ส่วนบุคคล โดยมีฟีเจอร์:</p>
+      <ul>
+        <li>สร้างและจัดการพอร์ตโฟลิโอ</li>
+        <li>บันทึกสินทรัพย์และหนี้สิน</li>
+        <li>อัปเดตราคาตลาดด้วยตนเอง</li>
+        <li>ดูแผนภูมิสัดส่วน (Donut Chart)</li>
+        <li>ติดตามแนวโน้มมูลค่าสุทธิ (Wealth Tracking)</li>
+        <li>ดูประวัติการเปลี่ยนแปลงทั้งหมด</li>
+      </ul>
+      <p><span class="badge-red">สำคัญ</span> iPortify <strong>ไม่ใช่</strong> ที่ปรึกษาทางการเงิน ไม่ใช่แพลตฟอร์มซื้อขายหลักทรัพย์ และไม่ได้ให้คำแนะนำการลงทุนใดๆ ข้อมูลในแอปเป็นเพียงเครื่องมือบันทึกส่วนตัวเท่านั้น</p>
+    </div>
+
+    <div class="section" id="th3">
+      <h2><span class="num">3</span> บัญชีผู้ใช้</h2>
+      <ul>
+        <li>คุณต้องสมัครบัญชีด้วยอีเมลจริงและยืนยันอีเมล</li>
+        <li>คุณรับผิดชอบในการรักษารหัสผ่านและความปลอดภัยของบัญชี</li>
+        <li>บัญชี 1 คน ต่อ 1 อีเมล — ห้ามแชร์บัญชี</li>
+        <li>หากพบว่ามีการเข้าถึงบัญชีโดยไม่ได้รับอนุญาต กรุณาเปลี่ยนรหัสผ่านทันที</li>
+      </ul>
+    </div>
+
+    <div class="section" id="th4">
+      <h2><span class="num">4</span> แผนบริการ (Free / Pro)</h2>
+      <p><strong>แผน Free (ฟรี):</strong></p>
+      <ul>
+        <li>1 พอร์ตโฟลิโอ</li>
+        <li>ไม่จำกัดจำนวนสินทรัพย์/หนี้สิน</li>
+        <li>ดูประวัติการเปลี่ยนแปลงได้ทั้งหมด</li>
+        <li>อัปเดตราคาตลาดด้วยตนเอง</li>
+        <li>ดูกราฟแนวโน้ม 7 วัน</li>
+      </ul>
+      <p><strong>แผน Pro (มีค่าบริการ — เร็วๆ นี้):</strong></p>
+      <ul>
+        <li>ไม่จำกัดพอร์ตโฟลิโอ</li>
+        <li>ดูกราฟแนวโน้มได้ถึง 1 ปี</li>
+        <li>ฟีเจอร์เพิ่มเติมในอนาคต</li>
+      </ul>
+      <p><span class="badge">หมายเหตุ</span> ราคาและเงื่อนไขของแผน Pro จะประกาศเมื่อเปิดให้บริการ</p>
+    </div>
+
+    <div class="section" id="th5">
+      <h2><span class="num">5</span> ข้อจำกัดการใช้งาน</h2>
+      <p>ห้ามผู้ใช้:</p>
+      <ul>
+        <li>ใช้แอปเพื่อกิจกรรมที่ผิดกฎหมาย</li>
+        <li>พยายามเข้าถึงข้อมูลของผู้ใช้อื่น</li>
+        <li>โจมตี แฮก หรือรบกวนระบบของแอป</li>
+        <li>ใช้ bot หรือ script อัตโนมัติเข้าถึงแอป</li>
+        <li>สร้างบัญชีปลอมหรือใช้ข้อมูลเท็จ</li>
+        <li>Reverse engineer หรือ decompile แอป</li>
+      </ul>
+    </div>
+
+    <div class="section" id="th6">
+      <h2><span class="num">6</span> ทรัพย์สินทางปัญญา</h2>
+      <p>แอปพลิเคชัน iPortify รวมถึงโค้ด ดีไซน์ โลโก้ และเนื้อหาทั้งหมดเป็นทรัพย์สินของ iPortify</p>
+      <p>ข้อมูลทางการเงินที่คุณกรอกเป็นทรัพย์สินของคุณ เรามีสิทธิ์เข้าถึงเพื่อให้บริการเท่านั้น</p>
+    </div>
+
+    <div class="section" id="th7">
+      <h2><span class="num">7</span> ข้อจำกัดความรับผิดชอบ</h2>
+      <p><span class="badge-red">สำคัญมาก</span></p>
+      <ul>
+        <li>iPortify ให้บริการ <strong>"ตามสภาพ" (as is)</strong> โดยไม่รับประกันว่าจะปราศจากข้อผิดพลาด</li>
+        <li>เราไม่รับผิดชอบต่อ <strong>การตัดสินใจทางการเงิน</strong> ที่เกิดจากข้อมูลในแอป</li>
+        <li>ราคาตลาดที่ผู้ใช้กรอกเป็นข้อมูลจากผู้ใช้เอง — iPortify ไม่รับรองความถูกต้อง</li>
+        <li>เราไม่รับผิดชอบต่อความเสียหายทางอ้อม สูญเสียกำไร หรือข้อมูลสูญหายจากการใช้แอป</li>
+        <li>ความรับผิดชอบสูงสุดของเราจำกัดที่ค่าบริการที่คุณจ่ายใน 12 เดือนล่าสุด (หรือ 0 บาท สำหรับแผน Free)</li>
+      </ul>
+    </div>
+
+    <div class="section" id="th8">
+      <h2><span class="num">8</span> การยกเลิกและลบบัญชี</h2>
+      <ul>
+        <li>คุณสามารถลบบัญชีได้ตลอดเวลาจากหน้า "ตั้งค่า" → "ลบบัญชี"</li>
+        <li>เมื่อลบบัญชี ข้อมูลทั้งหมดจะถูกลบอย่างถาวร ไม่สามารถกู้คืนได้</li>
+        <li>เราสงวนสิทธิ์ในการระงับหรือลบบัญชีที่ละเมิดเงื่อนไขการใช้งาน</li>
+      </ul>
+    </div>
+
+    <div class="section" id="th9">
+      <h2><span class="num">9</span> การเปลี่ยนแปลงเงื่อนไข</h2>
+      <p>เราอาจปรับปรุงเงื่อนไขนี้เป็นครั้งคราว หากมีการเปลี่ยนแปลงที่สำคัญ เราจะแจ้งให้ทราบล่วงหน้าอย่างน้อย 7 วัน</p>
+    </div>
+
+    <div class="section" id="th10">
+      <h2><span class="num">10</span> กฎหมายที่ใช้บังคับ</h2>
+      <p>เงื่อนไขนี้อยู่ภายใต้กฎหมายของราชอาณาจักรไทย ข้อพิพาทจะได้รับการพิจารณาโดยศาลที่มีเขตอำนาจในประเทศไทย</p>
+    </div>
+
+    <div class="section" id="th11">
+      <h2><span class="num">11</span> ติดต่อเรา</h2>
+      <p>หากมีคำถามเกี่ยวกับเงื่อนไขนี้ สามารถติดต่อได้ที่:</p>
+      <ul>
+        <li>อีเมล: <strong>support@iportify.app</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- English -->
+  <div data-lang="en">
+
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#en1">Acceptance of Terms</a></li>
+        <li><a href="#en2">Description of Service</a></li>
+        <li><a href="#en3">User Accounts</a></li>
+        <li><a href="#en4">Service Plans (Free / Pro)</a></li>
+        <li><a href="#en5">Usage Restrictions</a></li>
+        <li><a href="#en6">Intellectual Property</a></li>
+        <li><a href="#en7">Limitation of Liability</a></li>
+        <li><a href="#en8">Termination & Account Deletion</a></li>
+        <li><a href="#en9">Changes to Terms</a></li>
+        <li><a href="#en10">Governing Law</a></li>
+        <li><a href="#en11">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <div class="section" id="en1">
+      <h2><span class="num">1</span> Acceptance of Terms</h2>
+      <p>By using the iPortify application, you agree to all terms in this document. If you do not agree, please stop using the app immediately.</p>
+      <p>Users must be at least 18 years old, or have parental consent.</p>
+    </div>
+
+    <div class="section" id="en2">
+      <h2><span class="num">2</span> Description of Service</h2>
+      <p>iPortify is a personal <strong>asset and debt tracking</strong> application with features including:</p>
+      <ul>
+        <li>Create and manage portfolios</li>
+        <li>Record assets and debts</li>
+        <li>Manual market price updates</li>
+        <li>Allocation charts (Donut Chart)</li>
+        <li>Net worth trend tracking (Wealth Tracking)</li>
+        <li>Full transaction history</li>
+      </ul>
+      <p><span class="badge-red">Important</span> iPortify is <strong>NOT</strong> a financial advisor, investment platform, or securities trading service. Data in the app is for personal record-keeping purposes only.</p>
+    </div>
+
+    <div class="section" id="en3">
+      <h2><span class="num">3</span> User Accounts</h2>
+      <ul>
+        <li>You must register with a valid email address and verify it</li>
+        <li>You are responsible for maintaining the security of your password and account</li>
+        <li>One account per email — sharing accounts is prohibited</li>
+        <li>If you suspect unauthorized access, change your password immediately</li>
+      </ul>
+    </div>
+
+    <div class="section" id="en4">
+      <h2><span class="num">4</span> Service Plans (Free / Pro)</h2>
+      <p><strong>Free Plan:</strong></p>
+      <ul>
+        <li>1 portfolio</li>
+        <li>Unlimited assets/debts</li>
+        <li>Full transaction history</li>
+        <li>Manual market price updates</li>
+        <li>7-day trend chart</li>
+      </ul>
+      <p><strong>Pro Plan (paid — coming soon):</strong></p>
+      <ul>
+        <li>Unlimited portfolios</li>
+        <li>Trend charts up to 1 year</li>
+        <li>Additional features in the future</li>
+      </ul>
+      <p><span class="badge">Note</span> Pro plan pricing and terms will be announced at launch.</p>
+    </div>
+
+    <div class="section" id="en5">
+      <h2><span class="num">5</span> Usage Restrictions</h2>
+      <p>Users must NOT:</p>
+      <ul>
+        <li>Use the app for illegal activities</li>
+        <li>Attempt to access other users' data</li>
+        <li>Attack, hack, or interfere with our systems</li>
+        <li>Use bots or automated scripts to access the app</li>
+        <li>Create fake accounts or provide false information</li>
+        <li>Reverse engineer or decompile the app</li>
+      </ul>
+    </div>
+
+    <div class="section" id="en6">
+      <h2><span class="num">6</span> Intellectual Property</h2>
+      <p>The iPortify application, including code, design, logo, and content, is the property of iPortify.</p>
+      <p>Financial data you enter remains your property. We access it solely to provide the service.</p>
+    </div>
+
+    <div class="section" id="en7">
+      <h2><span class="num">7</span> Limitation of Liability</h2>
+      <p><span class="badge-red">Very Important</span></p>
+      <ul>
+        <li>iPortify is provided <strong>"as is"</strong> without warranty of any kind</li>
+        <li>We are NOT responsible for <strong>financial decisions</strong> made based on data in the app</li>
+        <li>Market prices entered by users are user-provided — iPortify does not guarantee their accuracy</li>
+        <li>We are not liable for indirect damages, lost profits, or data loss from using the app</li>
+        <li>Our maximum liability is limited to fees paid in the past 12 months (or ฿0 for Free plan users)</li>
+      </ul>
+    </div>
+
+    <div class="section" id="en8">
+      <h2><span class="num">8</span> Termination & Account Deletion</h2>
+      <ul>
+        <li>You can delete your account at any time from "Settings" → "Delete Account"</li>
+        <li>Once deleted, all data is permanently removed and cannot be recovered</li>
+        <li>We reserve the right to suspend or delete accounts that violate these terms</li>
+      </ul>
+    </div>
+
+    <div class="section" id="en9">
+      <h2><span class="num">9</span> Changes to Terms</h2>
+      <p>We may update these terms periodically. If significant changes are made, we will provide at least 7 days' notice.</p>
+    </div>
+
+    <div class="section" id="en10">
+      <h2><span class="num">10</span> Governing Law</h2>
+      <p>These terms are governed by the laws of the Kingdom of Thailand. Disputes will be resolved by courts with jurisdiction in Thailand.</p>
+    </div>
+
+    <div class="section" id="en11">
+      <h2><span class="num">11</span> Contact Us</h2>
+      <p>If you have questions about these terms, contact us at:</p>
+      <ul>
+        <li>Email: <strong>support@iportify.app</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="links">
+    <a href="index.html">
+      <span>🔒</span>
+      <span data-lang="th">นโยบายความเป็นส่วนตัว</span>
+      <span data-lang="en">Privacy Policy</span>
+    </a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>© 2026 iPortify. All rights reserved.</p>
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.dataset.lang === lang ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
+  });
+  document.documentElement.lang = lang;
+}
+setLang('th');
+</script>
+
+</body>
+</html>

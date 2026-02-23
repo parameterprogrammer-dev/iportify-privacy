@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — iPortify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #6B8AFD;
+      --accent-bg: #EEF2FF;
+      --text: #1E293B;
+      --sub: #64748B;
+      --bg: #FAFBFE;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+      --success: #34D399;
+      --danger: #F87171;
+      --radius: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #6366F1 0%, #818CF8 50%, #6B8AFD 100%);
+      color: white;
+      padding: 60px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60%; left: -30%;
+      width: 160%; height: 160%;
+      background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
+    }
+
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hero-logo .icon {
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-logo span {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      margin-bottom: 8px;
+      position: relative;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      opacity: 0.85;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px; right: 20px;
+      display: flex; gap: 4px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 3px;
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-btn {
+      padding: 6px 14px;
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .lang-btn.active {
+      background: white;
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .toc h3 {
+      font-size: 14px;
+      color: var(--sub);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc li {
+      margin-bottom: 6px;
+    }
+
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .toc a:hover { opacity: 0.7; }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .section h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .section p, .section li {
+      font-size: 14px;
+      color: var(--sub);
+      margin-bottom: 10px;
+    }
+
+    .section ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .section li { margin-bottom: 6px; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 32px 20px;
+      color: var(--sub);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer a { color: var(--accent); text-decoration: none; }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 16px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .links a:hover { background: var(--accent); color: white; }
+
+    [data-lang="en"] { display: none; }
+
+    @media (max-width: 480px) {
+      .section { padding: 20px; }
+      .toc { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="lang-switch">
+    <button class="lang-btn active" onclick="setLang('th')">TH</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+  <div class="hero-logo">
+    <div class="icon">📊</div>
+    <span>iPortify</span>
+  </div>
+  <h1 data-lang="th">นโยบายความเป็นส่วนตัว</h1>
+  <h1 data-lang="en">Privacy Policy</h1>
+  <p data-lang="th">มีผลบังคับใช้: 1 มีนาคม 2026</p>
+  <p data-lang="en">Effective: March 1, 2026</p>
+</div>
+
+<div class="container">
+
+  <!-- Thai -->
+  <div data-lang="th">
+
+    <div class="toc">
+      <h3>สารบัญ</h3>
+      <ol>
+        <li><a href="#th1">ข้อมูลที่เราเก็บรวบรวม</a></li>
+        <li><a href="#th2">วิธีการใช้ข้อมูล</a></li>
+        <li><a href="#th3">การจัดเก็บและความปลอดภัย</a></li>
+        <li><a href="#th4">การแบ่งปันข้อมูล</a></li>
+        <li><a href="#th5">สิทธิ์ของผู้ใช้</a></li>
+        <li><a href="#th6">คุกกี้และเทคโนโลยีติดตาม</a></li>
+        <li><a href="#th7">การเปลี่ยนแปลงนโยบาย</a></li>
+        <li><a href="#th8">ติดต่อเรา</a></li>
+      </ol>
+    </div>
+
+    <div class="section" id="th1">
+      <h2><span class="num">1</span> ข้อมูลที่เราเก็บรวบรวม</h2>
+      <p><strong>ข้อมูลบัญชี:</strong></p>
+      <ul>
+        <li>ชื่อ-นามสกุล (ที่คุณกรอกตอนสมัคร)</li>
+        <li>อีเมล</li>
+        <li>รหัสผ่าน (เข้ารหัสแบบ hash ไม่สามารถอ่านได้)</li>
+      </ul>
+      <p><strong>ข้อมูลทางการเงินที่คุณกรอก:</strong></p>
+      <ul>
+        <li>ข้อมูลสินทรัพย์ (ชื่อ, ประเภท, มูลค่า, จำนวน, ราคาทุน, ราคาตลาด)</li>
+        <li>ข้อมูลหนี้สิน (ชื่อ, ประเภท, จำนวนเงิน, อัตราดอกเบี้ย)</li>
+        <li>ชื่อพอร์ตโฟลิโอ</li>
+        <li>ประวัติการเปลี่ยนแปลง (Snapshots)</li>
+      </ul>
+      <p><strong>ข้อมูลอุปกรณ์ (เก็บอัตโนมัติ):</strong></p>
+      <ul>
+        <li>ข้อมูล Crash report (ผ่าน Firebase Crashlytics)</li>
+        <li>ประเภทอุปกรณ์และระบบปฏิบัติการ</li>
+      </ul>
+      <p><span class="badge">สำคัญ</span> เราไม่เก็บข้อมูลบัญชีธนาคาร เลขบัตรเครดิต หรือรหัส OTP ใดๆ ทั้งสิ้น</p>
+    </div>
+
+    <div class="section" id="th2">
+      <h2><span class="num">2</span> วิธีการใช้ข้อมูล</h2>
+      <p>เราใช้ข้อมูลของคุณเพื่อ:</p>
+      <ul>
+        <li>ให้บริการแอปพลิเคชัน iPortify ตามปกติ</li>
+        <li>แสดงข้อมูลสินทรัพย์ หนี้สิน และมูลค่าสุทธิของคุณ</li>
+        <li>บันทึก Snapshot ความมั่งคั่งเพื่อติดตามแนวโน้ม</li>
+        <li>ส่งอีเมลยืนยันตัวตนและรีเซ็ตรหัสผ่าน</li>
+        <li>แก้ไขปัญหาทางเทคนิค (Crash reports)</li>
+      </ul>
+      <p>เรา <strong>ไม่ใช้</strong> ข้อมูลของคุณเพื่อ:</p>
+      <ul>
+        <li>ขายให้บุคคลที่สาม</li>
+        <li>แสดงโฆษณาที่กำหนดเป้าหมาย</li>
+        <li>วิเคราะห์พฤติกรรมทางการเงินเพื่อประโยชน์เชิงพาณิชย์</li>
+      </ul>
+    </div>
+
+    <div class="section" id="th3">
+      <h2><span class="num">3</span> การจัดเก็บและความปลอดภัย</h2>
+      <ul>
+        <li>ข้อมูลทั้งหมดจัดเก็บใน <strong>Google Firebase</strong> (Firestore) ซึ่งเป็นไปตามมาตรฐาน SOC 2, ISO 27001</li>
+        <li>การสื่อสารระหว่างแอปกับ server ใช้การเข้ารหัส <strong>TLS/SSL</strong></li>
+        <li>รหัสผ่านถูก hash ด้วย Firebase Authentication (bcrypt/scrypt)</li>
+        <li>ข้อมูลทางการเงินแยกตาม User ID — ผู้ใช้คนอื่นไม่สามารถเข้าถึงได้</li>
+        <li>Firestore Security Rules บังคับให้เข้าถึงเฉพาะข้อมูลของตนเอง</li>
+      </ul>
+    </div>
+
+    <div class="section" id="th4">
+      <h2><span class="num">4</span> การแบ่งปันข้อมูล</h2>
+      <p>เราจะ <strong>ไม่ขาย ไม่ให้เช่า และไม่แบ่งปัน</strong> ข้อมูลส่วนบุคคลของคุณกับบุคคลที่สาม ยกเว้นในกรณี:</p>
+      <ul>
+        <li><strong>ผู้ให้บริการ:</strong> Google Firebase (จัดเก็บข้อมูลและ Authentication)</li>
+        <li><strong>ตามกฎหมาย:</strong> เมื่อมีคำสั่งศาลหรือหน่วยงานรัฐที่มีอำนาจตามกฎหมาย</li>
+      </ul>
+    </div>
+
+    <div class="section" id="th5">
+      <h2><span class="num">5</span> สิทธิ์ของผู้ใช้</h2>
+      <p>คุณมีสิทธิ์ดังนี้:</p>
+      <ul>
+        <li><strong>เข้าถึง:</strong> ดูข้อมูลทั้งหมดของคุณผ่านแอปได้ตลอดเวลา</li>
+        <li><strong>แก้ไข:</strong> แก้ไขข้อมูลสินทรัพย์ หนี้สิน และโปรไฟล์ได้ทุกเมื่อ</li>
+        <li><strong>ลบ:</strong> ลบบัญชีและข้อมูลทั้งหมดได้จากหน้า "ตั้งค่า" → "ลบบัญชี"</li>
+        <li><strong>ส่งออก:</strong> (จะเพิ่มในอนาคต) ส่งออกข้อมูลในรูปแบบ PDF/CSV</li>
+      </ul>
+      <p>เมื่อคุณลบบัญชี ข้อมูลทั้งหมดจะถูกลบออกจากระบบอย่างถาวรภายใน 30 วัน</p>
+    </div>
+
+    <div class="section" id="th6">
+      <h2><span class="num">6</span> คุกกี้และเทคโนโลยีติดตาม</h2>
+      <p>แอป iPortify <strong>ไม่ใช้คุกกี้</strong> เพื่อติดตามผู้ใช้ เราใช้เฉพาะ:</p>
+      <ul>
+        <li><strong>Firebase Crashlytics:</strong> เก็บข้อมูล crash เพื่อแก้ไขปัญหาทางเทคนิค</li>
+        <li><strong>SharedPreferences:</strong> เก็บการตั้งค่าภาษาและธีมในเครื่อง (ไม่ส่งออก server)</li>
+      </ul>
+    </div>
+
+    <div class="section" id="th7">
+      <h2><span class="num">7</span> การเปลี่ยนแปลงนโยบาย</h2>
+      <p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว หากมีการเปลี่ยนแปลงที่สำคัญ เราจะแจ้งให้ทราบผ่านแอปพลิเคชันหรืออีเมล</p>
+      <p>การใช้แอปต่อหลังจากมีการเปลี่ยนแปลง ถือว่าคุณยอมรับนโยบายฉบับใหม่</p>
+    </div>
+
+    <div class="section" id="th8">
+      <h2><span class="num">8</span> ติดต่อเรา</h2>
+      <p>หากมีคำถามเกี่ยวกับนโยบายนี้ สามารถติดต่อได้ที่:</p>
+      <ul>
+        <li>อีเมล: <strong>privacy@iportify.app</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- English -->
+  <div data-lang="en">
+
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#en1">Information We Collect</a></li>
+        <li><a href="#en2">How We Use Information</a></li>
+        <li><a href="#en3">Storage & Security</a></li>
+        <li><a href="#en4">Information Sharing</a></li>
+        <li><a href="#en5">Your Rights</a></li>
+        <li><a href="#en6">Cookies & Tracking</a></li>
+        <li><a href="#en7">Policy Changes</a></li>
+        <li><a href="#en8">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <div class="section" id="en1">
+      <h2><span class="num">1</span> Information We Collect</h2>
+      <p><strong>Account information:</strong></p>
+      <ul>
+        <li>Full name (provided during registration)</li>
+        <li>Email address</li>
+        <li>Password (hashed and encrypted, never stored in plain text)</li>
+      </ul>
+      <p><strong>Financial data you enter:</strong></p>
+      <ul>
+        <li>Asset details (name, type, value, quantity, cost basis, market price)</li>
+        <li>Debt details (name, type, amount, interest rate)</li>
+        <li>Portfolio names</li>
+        <li>Wealth tracking snapshots</li>
+      </ul>
+      <p><strong>Device data (collected automatically):</strong></p>
+      <ul>
+        <li>Crash reports (via Firebase Crashlytics)</li>
+        <li>Device type and operating system</li>
+      </ul>
+      <p><span class="badge">Important</span> We do NOT collect bank account numbers, credit card details, or any OTP codes.</p>
+    </div>
+
+    <div class="section" id="en2">
+      <h2><span class="num">2</span> How We Use Information</h2>
+      <p>We use your data to:</p>
+      <ul>
+        <li>Provide iPortify's core functionality</li>
+        <li>Display your assets, debts, and net worth</li>
+        <li>Record wealth snapshots for trend tracking</li>
+        <li>Send verification and password reset emails</li>
+        <li>Fix technical issues (crash reports)</li>
+      </ul>
+      <p>We do <strong>NOT</strong> use your data to:</p>
+      <ul>
+        <li>Sell to third parties</li>
+        <li>Show targeted advertisements</li>
+        <li>Analyze financial behavior for commercial purposes</li>
+      </ul>
+    </div>
+
+    <div class="section" id="en3">
+      <h2><span class="num">3</span> Storage & Security</h2>
+      <ul>
+        <li>All data is stored on <strong>Google Firebase</strong> (Firestore), which complies with SOC 2 and ISO 27001</li>
+        <li>All communications use <strong>TLS/SSL</strong> encryption</li>
+        <li>Passwords are hashed via Firebase Authentication (bcrypt/scrypt)</li>
+        <li>Financial data is isolated per User ID — other users cannot access your data</li>
+        <li>Firestore Security Rules enforce owner-only access</li>
+      </ul>
+    </div>
+
+    <div class="section" id="en4">
+      <h2><span class="num">4</span> Information Sharing</h2>
+      <p>We will <strong>never sell, rent, or share</strong> your personal data with third parties, except:</p>
+      <ul>
+        <li><strong>Service providers:</strong> Google Firebase (data storage and authentication)</li>
+        <li><strong>Legal requirements:</strong> When required by court order or law enforcement with proper authority</li>
+      </ul>
+    </div>
+
+    <div class="section" id="en5">
+      <h2><span class="num">5</span> Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access:</strong> View all your data anytime through the app</li>
+        <li><strong>Modify:</strong> Edit your assets, debts, and profile at any time</li>
+        <li><strong>Delete:</strong> Permanently delete your account from "Settings" → "Delete Account"</li>
+        <li><strong>Export:</strong> (Coming soon) Export your data as PDF/CSV</li>
+      </ul>
+      <p>When you delete your account, all data is permanently removed from our systems within 30 days.</p>
+    </div>
+
+    <div class="section" id="en6">
+      <h2><span class="num">6</span> Cookies & Tracking</h2>
+      <p>iPortify does <strong>not use cookies</strong> to track users. We only use:</p>
+      <ul>
+        <li><strong>Firebase Crashlytics:</strong> Crash data for fixing technical issues</li>
+        <li><strong>SharedPreferences:</strong> Local-only storage for language and theme settings (never sent to server)</li>
+      </ul>
+    </div>
+
+    <div class="section" id="en7">
+      <h2><span class="num">7</span> Policy Changes</h2>
+      <p>We may update this policy periodically. If significant changes are made, we will notify you via the app or email.</p>
+      <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section" id="en8">
+      <h2><span class="num">8</span> Contact Us</h2>
+      <p>If you have questions about this policy, contact us at:</p>
+      <ul>
+        <li>Email: <strong>privacy@iportify.app</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="links">
+    <a href="terms.html">
+      <span>📄</span>
+      <span data-lang="th">เงื่อนไขการใช้บริการ</span>
+      <span data-lang="en">Terms of Service</span>
+    </a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>© 2026 iPortify. All rights reserved.</p>
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.dataset.lang === lang ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
+  });
+  document.documentElement.lang = lang;
+}
+setLang('th');
+</script>
+
+</body>
+</html>
