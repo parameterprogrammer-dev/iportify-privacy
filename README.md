@@ -7,8 +7,10 @@
 
 | ไฟล์ | หน้าที่ |
 |------|--------|
-| `index.html` | Privacy Policy (นโยบายความเป็นส่วนตัว) |
-| `terms.html` | Terms of Service (เงื่อนไขการใช้บริการ) |
+| `index.html` | Privacy Policy — ไทย (สลับ EN ได้ในหน้า) |
+| `terms.html` | Terms of Service — ไทย (สลับ EN ได้ในหน้า) |
+| `en/index.html` | Privacy Policy — English only |
+| `en/terms.html` | Terms of Service — English only |
 
 ## 🚀 วิธี Deploy บน GitHub Pages (ฟรี)
 
@@ -45,16 +47,18 @@ git push origin main
 5. รอ 1-2 นาที จะได้ URL:
 
 ```
-https://YOUR_USERNAME.github.io/iportify-privacy/          ← Privacy Policy
-https://YOUR_USERNAME.github.io/iportify-privacy/terms.html ← Terms of Service
+https://YOUR_USERNAME.github.io/iportify-privacy/          ← Privacy Policy (TH)
+https://YOUR_USERNAME.github.io/iportify-privacy/terms.html ← Terms of Service (TH)
+https://YOUR_USERNAME.github.io/iportify-privacy/en/        ← Privacy Policy (EN)
+https://YOUR_USERNAME.github.io/iportify-privacy/en/terms.html ← Terms of Service (EN)
 ```
 
 ### ขั้นตอนที่ 4: ใช้ URL ใน App Store / Play Store
 
-| ช่อง | URL |
-|------|-----|
-| Privacy Policy URL | `https://YOUR_USERNAME.github.io/iportify-privacy/` |
-| Terms of Service URL | `https://YOUR_USERNAME.github.io/iportify-privacy/terms.html` |
+| ช่อง | URL (ไทย) | URL (English) |
+|------|-----------|---------------|
+| Privacy Policy | `.../iportify-privacy/` | `.../iportify-privacy/en/` |
+| Terms of Service | `.../iportify-privacy/terms.html` | `.../iportify-privacy/en/terms.html` |
 
 ## ✏️ สิ่งที่ต้องแก้ไขก่อน Deploy
 
