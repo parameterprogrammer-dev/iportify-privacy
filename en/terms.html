@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — iPortify</title>
+  <title>Terms of Service — iPortify</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -98,8 +98,12 @@
     .section ul { padding-left: 20px; margin-bottom: 12px; }
     .section li { margin-bottom: 6px; }
     .badge {
-      display: inline-block; padding: 3px 10px; background: var(--accent-bg);
-      color: var(--accent); border-radius: 6px; font-size: 12px; font-weight: 600;
+      display: inline-block; padding: 3px 10px; background: #FEF3C7;
+      color: #B45309; border-radius: 6px; font-size: 12px; font-weight: 600;
+    }
+    .badge-red {
+      display: inline-block; padding: 3px 10px; background: #FEE2E2;
+      color: #DC2626; border-radius: 6px; font-size: 12px; font-weight: 600;
     }
     .footer {
       text-align: center; padding: 32px 20px; color: var(--sub);
@@ -121,14 +125,14 @@
 
 <div class="hero">
   <div class="lang-switch">
-    <a class="lang-btn" href="../index.html">TH</a>
+    <a class="lang-btn" href="../terms.html">TH</a>
     <a class="lang-btn active" href="#">EN</a>
   </div>
   <div class="hero-logo">
     <div class="icon">📊</div>
     <span>iPortify</span>
   </div>
-  <h1>Privacy Policy</h1>
+  <h1>Terms of Service</h1>
   <p>Effective: March 1, 2026</p>
 </div>
 
@@ -137,115 +141,129 @@
   <div class="toc">
     <h3>Table of Contents</h3>
     <ol>
-      <li><a href="#s1">Information We Collect</a></li>
-      <li><a href="#s2">How We Use Information</a></li>
-      <li><a href="#s3">Storage & Security</a></li>
-      <li><a href="#s4">Information Sharing</a></li>
-      <li><a href="#s5">Your Rights</a></li>
-      <li><a href="#s6">Cookies & Tracking</a></li>
-      <li><a href="#s7">Policy Changes</a></li>
-      <li><a href="#s8">Contact Us</a></li>
+      <li><a href="#s1">Acceptance of Terms</a></li>
+      <li><a href="#s2">Description of Service</a></li>
+      <li><a href="#s3">User Accounts</a></li>
+      <li><a href="#s4">Service Plans (Free / Pro)</a></li>
+      <li><a href="#s5">Usage Restrictions</a></li>
+      <li><a href="#s6">Intellectual Property</a></li>
+      <li><a href="#s7">Limitation of Liability</a></li>
+      <li><a href="#s8">Termination & Account Deletion</a></li>
+      <li><a href="#s9">Changes to Terms</a></li>
+      <li><a href="#s10">Governing Law</a></li>
+      <li><a href="#s11">Contact Us</a></li>
     </ol>
   </div>
 
   <div class="section" id="s1">
-    <h2><span class="num">1</span> Information We Collect</h2>
-    <p><strong>Account information:</strong></p>
-    <ul>
-      <li>Full name (provided during registration)</li>
-      <li>Email address</li>
-      <li>Password (hashed and encrypted, never stored in plain text)</li>
-    </ul>
-    <p><strong>Financial data you enter:</strong></p>
-    <ul>
-      <li>Asset details (name, type, value, quantity, cost basis, market price)</li>
-      <li>Debt details (name, type, amount, interest rate)</li>
-      <li>Portfolio names</li>
-      <li>Wealth tracking snapshots</li>
-    </ul>
-    <p><strong>Device data (collected automatically):</strong></p>
-    <ul>
-      <li>Crash reports (via Firebase Crashlytics)</li>
-      <li>Device type and operating system</li>
-    </ul>
-    <p><span class="badge">Important</span> We do NOT collect bank account numbers, credit card details, or any OTP codes.</p>
+    <h2><span class="num">1</span> Acceptance of Terms</h2>
+    <p>By using the iPortify application, you agree to all terms in this document. If you do not agree, please stop using the app immediately.</p>
+    <p>Users must be at least 18 years old, or have parental consent.</p>
   </div>
 
   <div class="section" id="s2">
-    <h2><span class="num">2</span> How We Use Information</h2>
-    <p>We use your data to:</p>
+    <h2><span class="num">2</span> Description of Service</h2>
+    <p>iPortify is a personal <strong>asset and debt tracking</strong> application with features including:</p>
     <ul>
-      <li>Provide iPortify's core functionality</li>
-      <li>Display your assets, debts, and net worth</li>
-      <li>Record wealth snapshots for trend tracking</li>
-      <li>Send verification and password reset emails</li>
-      <li>Fix technical issues (crash reports)</li>
+      <li>Create and manage portfolios</li>
+      <li>Record assets and debts</li>
+      <li>Manual market price updates</li>
+      <li>Allocation charts (Donut Chart)</li>
+      <li>Net worth trend tracking (Wealth Tracking)</li>
+      <li>Full transaction history</li>
     </ul>
-    <p>We do <strong>NOT</strong> use your data to:</p>
-    <ul>
-      <li>Sell to third parties</li>
-      <li>Show targeted advertisements</li>
-      <li>Analyze financial behavior for commercial purposes</li>
-    </ul>
+    <p><span class="badge-red">Important</span> iPortify is <strong>NOT</strong> a financial advisor, investment platform, or securities trading service. Data in the app is for personal record-keeping purposes only.</p>
   </div>
 
   <div class="section" id="s3">
-    <h2><span class="num">3</span> Storage & Security</h2>
+    <h2><span class="num">3</span> User Accounts</h2>
     <ul>
-      <li>All data is stored on <strong>Google Firebase</strong> (Firestore), which complies with SOC 2 and ISO 27001</li>
-      <li>All communications use <strong>TLS/SSL</strong> encryption</li>
-      <li>Passwords are hashed via Firebase Authentication (bcrypt/scrypt)</li>
-      <li>Financial data is isolated per User ID — other users cannot access your data</li>
-      <li>Firestore Security Rules enforce owner-only access</li>
+      <li>You must register with a valid email address and verify it</li>
+      <li>You are responsible for maintaining the security of your password and account</li>
+      <li>One account per email — sharing accounts is prohibited</li>
+      <li>If you suspect unauthorized access, change your password immediately</li>
     </ul>
   </div>
 
   <div class="section" id="s4">
-    <h2><span class="num">4</span> Information Sharing</h2>
-    <p>We will <strong>never sell, rent, or share</strong> your personal data with third parties, except:</p>
+    <h2><span class="num">4</span> Service Plans (Free / Pro)</h2>
+    <p><strong>Free Plan:</strong></p>
     <ul>
-      <li><strong>Service providers:</strong> Google Firebase (data storage and authentication)</li>
-      <li><strong>Legal requirements:</strong> When required by court order or law enforcement with proper authority</li>
+      <li>1 portfolio</li>
+      <li>Unlimited assets/debts</li>
+      <li>Full transaction history</li>
+      <li>Manual market price updates</li>
+      <li>7-day trend chart</li>
     </ul>
+    <p><strong>Pro Plan (paid — coming soon):</strong></p>
+    <ul>
+      <li>Unlimited portfolios</li>
+      <li>Trend charts up to 1 year</li>
+      <li>Additional features in the future</li>
+    </ul>
+    <p><span class="badge">Note</span> Pro plan pricing and terms will be announced at launch.</p>
   </div>
 
   <div class="section" id="s5">
-    <h2><span class="num">5</span> Your Rights</h2>
-    <p>You have the right to:</p>
+    <h2><span class="num">5</span> Usage Restrictions</h2>
+    <p>Users must NOT:</p>
     <ul>
-      <li><strong>Access:</strong> View all your data anytime through the app</li>
-      <li><strong>Modify:</strong> Edit your assets, debts, and profile at any time</li>
-      <li><strong>Delete:</strong> Permanently delete your account from "Settings" → "Delete Account"</li>
-      <li><strong>Export:</strong> (Coming soon) Export your data as PDF/CSV</li>
+      <li>Use the app for illegal activities</li>
+      <li>Attempt to access other users' data</li>
+      <li>Attack, hack, or interfere with our systems</li>
+      <li>Use bots or automated scripts to access the app</li>
+      <li>Create fake accounts or provide false information</li>
+      <li>Reverse engineer or decompile the app</li>
     </ul>
-    <p>When you delete your account, all data is permanently removed from our systems within 30 days.</p>
   </div>
 
   <div class="section" id="s6">
-    <h2><span class="num">6</span> Cookies & Tracking</h2>
-    <p>iPortify does <strong>not use cookies</strong> to track users. We only use:</p>
-    <ul>
-      <li><strong>Firebase Crashlytics:</strong> Crash data for fixing technical issues</li>
-      <li><strong>SharedPreferences:</strong> Local-only storage for language and theme settings (never sent to server)</li>
-    </ul>
+    <h2><span class="num">6</span> Intellectual Property</h2>
+    <p>The iPortify application, including code, design, logo, and content, is the property of iPortify.</p>
+    <p>Financial data you enter remains your property. We access it solely to provide the service.</p>
   </div>
 
   <div class="section" id="s7">
-    <h2><span class="num">7</span> Policy Changes</h2>
-    <p>We may update this policy periodically. If significant changes are made, we will notify you via the app or email.</p>
-    <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <h2><span class="num">7</span> Limitation of Liability</h2>
+    <p><span class="badge-red">Very Important</span></p>
+    <ul>
+      <li>iPortify is provided <strong>"as is"</strong> without warranty of any kind</li>
+      <li>We are NOT responsible for <strong>financial decisions</strong> made based on data in the app</li>
+      <li>Market prices entered by users are user-provided — iPortify does not guarantee their accuracy</li>
+      <li>We are not liable for indirect damages, lost profits, or data loss from using the app</li>
+      <li>Our maximum liability is limited to fees paid in the past 12 months (or $0 for Free plan users)</li>
+    </ul>
   </div>
 
   <div class="section" id="s8">
-    <h2><span class="num">8</span> Contact Us</h2>
-    <p>If you have questions about this policy, contact us at:</p>
+    <h2><span class="num">8</span> Termination & Account Deletion</h2>
+    <ul>
+      <li>You can delete your account at any time from "Settings" → "Delete Account"</li>
+      <li>Once deleted, all data is permanently removed and cannot be recovered</li>
+      <li>We reserve the right to suspend or delete accounts that violate these terms</li>
+    </ul>
+  </div>
+
+  <div class="section" id="s9">
+    <h2><span class="num">9</span> Changes to Terms</h2>
+    <p>We may update these terms periodically. If significant changes are made, we will provide at least 7 days' notice.</p>
+  </div>
+
+  <div class="section" id="s10">
+    <h2><span class="num">10</span> Governing Law</h2>
+    <p>These terms are governed by the laws of the Kingdom of Thailand. Disputes will be resolved by courts with jurisdiction in Thailand.</p>
+  </div>
+
+  <div class="section" id="s11">
+    <h2><span class="num">11</span> Contact Us</h2>
+    <p>If you have questions about these terms, contact us at:</p>
     <ul>
       <li>Email: <strong>parameterprogrammer@gmail.com</strong></li>
     </ul>
   </div>
 
   <div class="links">
-    <a href="terms.html">📄 Terms of Service</a>
+    <a href="index.html">🔒 Privacy Policy</a>
   </div>
 
 </div>
