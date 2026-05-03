@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ลบบัญชี — iPortify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #6B8AFD;
+      --accent-bg: #EEF2FF;
+      --text: #1E293B;
+      --sub: #64748B;
+      --bg: #FAFBFE;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+      --danger: #EF4444;
+      --danger-bg: #FEE2E2;
+      --radius: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+    .hero {
+      background: linear-gradient(135deg, #6366F1 0%, #818CF8 50%, #6B8AFD 100%);
+      color: white; padding: 60px 24px 48px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -60%; left: -30%;
+      width: 160%; height: 160%;
+      background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
+    }
+    .hero h1 {
+      font-size: clamp(24px, 5vw, 36px); font-weight: 700;
+      margin-bottom: 8px; position: relative; letter-spacing: -0.02em;
+    }
+    .hero p { opacity: 0.85; font-size: 14px; position: relative; }
+    .lang-switch {
+      position: absolute; top: 20px; right: 20px;
+      display: flex; gap: 4px; background: rgba(255,255,255,0.15);
+      border-radius: 10px; padding: 3px; backdrop-filter: blur(10px);
+    }
+    .lang-btn {
+      padding: 6px 14px; border: none; background: transparent;
+      color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600;
+      border-radius: 8px; cursor: pointer; transition: all 0.2s;
+      font-family: inherit;
+    }
+    .lang-btn.active { background: white; color: var(--accent); }
+    .container { max-width: 640px; margin: 0 auto; padding: 32px 20px 80px; }
+    .section {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px; margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .section h2 {
+      font-size: 18px; font-weight: 700; color: var(--text);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+    }
+    .section h2 .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; background: var(--accent-bg); color: var(--accent);
+      border-radius: 9px; font-size: 13px; font-weight: 700; flex-shrink: 0;
+    }
+    .section p, .section li { font-size: 14px; color: var(--sub); margin-bottom: 10px; }
+    .section ul { padding-left: 20px; margin-bottom: 12px; }
+    .section li { margin-bottom: 6px; }
+    .warning-box {
+      background: var(--danger-bg); border: 1px solid #FECACA;
+      border-radius: 14px; padding: 16px 20px; margin: 16px 0;
+    }
+    .warning-box p { color: var(--danger); font-weight: 600; font-size: 13px; margin: 0; }
+    .info-box {
+      background: var(--accent-bg); border: 1px solid #C7D2FE;
+      border-radius: 14px; padding: 16px 20px; margin: 16px 0;
+    }
+    .info-box p { color: var(--accent); font-size: 13px; margin: 0; }
+    .step-img {
+      background: #F1F5F9; border-radius: 12px; padding: 20px;
+      text-align: center; margin: 12px 0; font-size: 13px; color: var(--sub);
+      border: 1px dashed var(--border);
+    }
+    .footer {
+      text-align: center; padding: 32px 20px; color: var(--sub);
+      font-size: 12px; border-top: 1px solid var(--border);
+    }
+    .footer a { color: var(--accent); text-decoration: none; }
+
+    /* Language toggle */
+    .en { display: none; }
+    body.lang-en .th { display: none; }
+    body.lang-en .en { display: block; }
+    body.lang-en .en-inline { display: inline; }
+    body.lang-en .th-inline { display: none; }
+
+    @media (max-width: 480px) { .section { padding: 20px; } }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="lang-switch">
+    <button class="lang-btn active" id="btnTh" onclick="setLang('th')">TH</button>
+    <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+  </div>
+  <h1>
+    <span class="th">ลบบัญชี iPortify</span>
+    <span class="en">Delete iPortify Account</span>
+  </h1>
+  <p>
+    <span class="th">วิธีลบบัญชีและข้อมูลทั้งหมดของคุณ</span>
+    <span class="en">How to delete your account and all your data</span>
+  </p>
+</div>
+
+<div class="container">
+
+  <!-- What gets deleted -->
+  <div class="section">
+    <h2>
+      <span class="th">ข้อมูลที่จะถูกลบ</span>
+      <span class="en">Data that will be deleted</span>
+    </h2>
+    <p>
+      <span class="th">เมื่อคุณลบบัญชี ข้อมูลทั้งหมดต่อไปนี้จะถูกลบอย่างถาวร:</span>
+      <span class="en">When you delete your account, all of the following data will be permanently deleted:</span>
+    </p>
+    <ul>
+      <li>
+        <span class="th">ข้อมูลบัญชี (ชื่อ, อีเมล)</span>
+        <span class="en">Account information (name, email)</span>
+      </li>
+      <li>
+        <span class="th">พอร์ตโฟลิโอทั้งหมด</span>
+        <span class="en">All portfolios</span>
+      </li>
+      <li>
+        <span class="th">สินทรัพย์และหนี้สินทั้งหมด</span>
+        <span class="en">All assets and debts</span>
+      </li>
+      <li>
+        <span class="th">Snapshot มูลค่าสุทธิ (กราฟแนวโน้ม)</span>
+        <span class="en">Net worth snapshots (trend charts)</span>
+      </li>
+      <li>
+        <span class="th">ประวัติการเปลี่ยนแปลงทั้งหมด</span>
+        <span class="en">All transaction history</span>
+      </li>
+    </ul>
+    <div class="warning-box">
+      <p>
+        <span class="th">⚠️ การลบบัญชีไม่สามารถยกเลิกได้ ข้อมูลจะถูกลบภายใน 30 วัน</span>
+        <span class="en">⚠️ Account deletion is irreversible. Data will be removed within 30 days.</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div class="section">
+    <h2>
+      <span class="th">วิธีลบบัญชี (ในแอป)</span>
+      <span class="en">How to delete your account (in-app)</span>
+    </h2>
+
+    <h2><span class="num">1</span>
+      <span class="th">เปิดแอป iPortify แล้วไปที่ "ตั้งค่า"</span>
+      <span class="en">Open iPortify and go to "Settings"</span>
+    </h2>
+    <div class="step-img">
+      <span class="th">แถบเมนูด้านล่าง → กดไอคอน ⚙️ ตั้งค่า (tab ขวาสุด)</span>
+      <span class="en">Bottom navigation bar → Tap ⚙️ Settings (rightmost tab)</span>
+    </div>
+
+    <h2><span class="num">2</span>
+      <span class="th">เลื่อนลงมาด้านล่าง กด "ลบบัญชี"</span>
+      <span class="en">Scroll down and tap "Delete Account"</span>
+    </h2>
+    <div class="step-img">
+      <span class="th">ปุ่มสีแดง "ลบบัญชี" อยู่ด้านล่างสุดของหน้าตั้งค่า</span>
+      <span class="en">Red "Delete Account" button at the bottom of Settings page</span>
+    </div>
+
+    <h2><span class="num">3</span>
+      <span class="th">ยืนยันการลบ</span>
+      <span class="en">Confirm deletion</span>
+    </h2>
+    <div class="step-img">
+      <span class="th">ระบบจะถามยืนยันอีกครั้ง → กด "ลบบัญชี" เพื่อยืนยัน</span>
+      <span class="en">A confirmation dialog will appear → Tap "Delete" to confirm</span>
+    </div>
+
+    <div class="info-box">
+      <p>
+        <span class="th">ℹ️ หลังลบบัญชี คุณจะถูก logout อัตโนมัติ และสามารถสมัครใหม่ได้ด้วยอีเมลเดิม</span>
+        <span class="en">ℹ️ After deletion, you will be logged out automatically. You can register again with the same email.</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section">
+    <h2>
+      <span class="th">ต้องการความช่วยเหลือ?</span>
+      <span class="en">Need help?</span>
+    </h2>
+    <p>
+      <span class="th">หากไม่สามารถลบบัญชีผ่านแอปได้ ส่งอีเมลมาที่:</span>
+      <span class="en">If you cannot delete your account through the app, email us at:</span>
+    </p>
+    <p><strong>parameterprogrammer@gmail.com</strong></p>
+    <p>
+      <span class="th">โปรดระบุอีเมลที่ใช้สมัครบัญชี เราจะดำเนินการลบให้ภายใน 30 วัน</span>
+      <span class="en">Please include the email used to register. We will process the deletion within 30 days.</span>
+    </p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>© 2026 iPortify. All rights reserved.</p>
+  <p>
+    <a href="index.html"><span class="th">นโยบายความเป็นส่วนตัว</span><span class="en">Privacy Policy</span></a>
+    &nbsp;·&nbsp;
+    <a href="terms.html"><span class="th">เงื่อนไขการใช้บริการ</span><span class="en">Terms of Service</span></a>
+  </p>
+</div>
+
+<script>
+function setLang(lang) {
+  if (lang === 'en') {
+    document.body.classList.add('lang-en');
+    document.getElementById('btnEn').classList.add('active');
+    document.getElementById('btnTh').classList.remove('active');
+  } else {
+    document.body.classList.remove('lang-en');
+    document.getElementById('btnTh').classList.add('active');
+    document.getElementById('btnEn').classList.remove('active');
+  }
+}
+</script>
+
+</body>
+</html>
