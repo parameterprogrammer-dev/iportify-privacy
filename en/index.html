@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — iPortify</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #6B8AFD;
@@ -15,13 +15,15 @@
       --bg: #FAFBFE;
       --card: #FFFFFF;
       --border: #E2E8F0;
-      --success: #34D399;
-      --danger: #F87171;
+      --danger: #EF4444;
+      --danger-bg: #FEE2E2;
+      --success: #059669;
+      --success-bg: #D1FAE5;
       --radius: 20px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
       background: var(--bg); color: var(--text);
       line-height: 1.75; -webkit-font-smoothing: antialiased;
     }
@@ -35,224 +37,262 @@
       width: 160%; height: 160%;
       background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
     }
-    .hero-logo {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-bottom: 20px; position: relative;
-    }
-    .hero-logo .icon {
-      width: 44px; height: 44px; background: rgba(255,255,255,0.2);
-      border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 22px; backdrop-filter: blur(10px);
-    }
-    .hero-logo span { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
     .hero h1 {
-      font-size: clamp(28px, 5vw, 40px); font-weight: 700;
-      margin-bottom: 8px; position: relative; letter-spacing: -0.03em;
+      font-size: clamp(24px, 5vw, 36px); font-weight: 700;
+      margin-bottom: 8px; position: relative; letter-spacing: -0.02em;
     }
     .hero p { opacity: 0.85; font-size: 14px; position: relative; }
-    .lang-switch {
-      position: absolute; top: 20px; right: 20px;
-      display: flex; gap: 4px; background: rgba(255,255,255,0.15);
-      border-radius: 10px; padding: 3px; backdrop-filter: blur(10px);
-    }
-    .lang-btn {
-      padding: 6px 14px; border: none; background: transparent;
-      color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600;
-      border-radius: 8px; cursor: pointer; transition: all 0.2s;
-      font-family: inherit; text-decoration: none; display: inline-block;
-    }
-    .lang-btn.active { background: white; color: var(--accent); }
-    .container { max-width: 740px; margin: 0 auto; padding: 32px 20px 80px; }
-    .toc {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 24px 28px; margin-bottom: 32px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    }
-    .toc h3 {
-      font-size: 14px; color: var(--sub); text-transform: uppercase;
-      letter-spacing: 0.05em; margin-bottom: 14px;
-    }
-    .toc ol { padding-left: 20px; }
-    .toc li { margin-bottom: 6px; }
-    .toc a {
-      color: var(--accent); text-decoration: none; font-size: 14px;
-      font-weight: 500; transition: opacity 0.2s;
-    }
-    .toc a:hover { opacity: 0.7; }
+    .container { max-width: 640px; margin: 0 auto; padding: 32px 20px 80px; }
     .section {
       background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 28px; margin-bottom: 16px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
     .section h2 {
-      font-size: 18px; font-weight: 700; color: var(--accent);
-      margin-bottom: 14px; display: flex; align-items: center;
-      gap: 10px; letter-spacing: -0.02em;
+      font-size: 18px; font-weight: 700; color: var(--text);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
     }
-    .section h2 .num {
-      display: inline-flex; align-items: center; justify-content: center;
+    .num {
       width: 28px; height: 28px; background: var(--accent-bg); color: var(--accent);
-      border-radius: 9px; font-size: 13px; font-weight: 700; flex-shrink: 0;
+      border-radius: 9px; display: inline-flex; align-items: center;
+      justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0;
     }
     .section p, .section li { font-size: 14px; color: var(--sub); margin-bottom: 10px; }
-    .section ul { padding-left: 20px; margin-bottom: 12px; }
+    .section ul { padding-left: 20px; }
     .section li { margin-bottom: 6px; }
-    .badge {
-      display: inline-block; padding: 3px 10px; background: var(--accent-bg);
-      color: var(--accent); border-radius: 6px; font-size: 12px; font-weight: 600;
+    .section h3 {
+      font-size: 14px; font-weight: 700; color: var(--text);
+      margin: 18px 0 8px;
+    }
+    .section h3:first-of-type { margin-top: 8px; }
+    .warning-box {
+      background: var(--danger-bg); border: 1px solid #FECACA;
+      border-radius: 12px; padding: 14px 16px; margin: 14px 0;
+    }
+    .warning-box p { color: var(--danger); font-weight: 600; font-size: 13px; margin: 0; }
+    .info-box {
+      background: var(--accent-bg); border: 1px solid #C7D2FE;
+      border-radius: 12px; padding: 14px 16px; margin: 14px 0;
+    }
+    .info-box p { color: var(--accent); font-size: 13px; margin: 0; }
+    .good-box {
+      background: var(--success-bg); border: 1px solid #A7F3D0;
+      border-radius: 12px; padding: 14px 16px; margin: 14px 0;
+    }
+    .good-box p { color: var(--success); font-size: 13px; margin: 0; font-weight: 600; }
+    table {
+      width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px;
+    }
+    th, td {
+      text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border);
+      color: var(--sub);
+    }
+    th { color: var(--text); font-weight: 700; font-size: 12px; }
+    .updated {
+      text-align: center; margin: 12px 0 0; font-size: 13px; color: var(--sub);
     }
     .footer {
-      text-align: center; padding: 32px 20px; color: var(--sub);
-      font-size: 12px; border-top: 1px solid var(--border);
+      text-align: center; padding: 0 20px 60px; font-size: 13px; color: var(--sub);
     }
     .footer a { color: var(--accent); text-decoration: none; }
-    .links { display: flex; justify-content: center; gap: 20px; margin-top: 16px; }
-    .links a {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 8px 16px; background: var(--accent-bg); color: var(--accent);
-      border-radius: 10px; font-size: 13px; font-weight: 600;
-      text-decoration: none; transition: all 0.2s;
-    }
-    .links a:hover { background: var(--accent); color: white; }
-    @media (max-width: 480px) { .section { padding: 20px; } .toc { padding: 18px; } }
+    .footer a:hover { text-decoration: underline; }
+    .footer-links { margin-bottom: 10px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="lang-switch">
-    <a class="lang-btn" href="../index.html">TH</a>
-    <a class="lang-btn active" href="#">EN</a>
-  </div>
-  <div class="hero-logo">
-    <div class="icon">📊</div>
-    <span>iPortify</span>
-  </div>
-  <h1>Privacy Policy</h1>
-  <p>Effective: March 1, 2026</p>
+  <h1>
+    <span>Privacy Policy</span>
+  </h1>
+  <p>
+    <span>iPortify — Assets and liabilities tracker</span>
+  </p>
 </div>
 
 <div class="container">
 
-  <div class="toc">
-    <h3>Table of Contents</h3>
-    <ol>
-      <li><a href="#s1">Information We Collect</a></li>
-      <li><a href="#s2">How We Use Information</a></li>
-      <li><a href="#s3">Storage & Security</a></li>
-      <li><a href="#s4">Information Sharing</a></li>
-      <li><a href="#s5">Your Rights</a></li>
-      <li><a href="#s6">Cookies & Tracking</a></li>
-      <li><a href="#s7">Policy Changes</a></li>
-      <li><a href="#s8">Contact Us</a></li>
-    </ol>
+  <!-- ════════ 1 ════════ -->
+  <div class="section">
+    <h2><span class="num">1</span>
+      <span>Overview</span>
+    </h2>
+    <p>iPortify takes your privacy seriously. This policy explains what data we collect, how we use it, and what rights you have.</p>
+
+    <div class="good-box">
+      <p>✅ We do not sell your data · No ads in the app · We never collect bank account numbers, card details, or one-time passcodes</p>
+    </div>
   </div>
 
-  <div class="section" id="s1">
-    <h2><span class="num">1</span> Information We Collect</h2>
-    <p><strong>Account information:</strong></p>
+  <!-- ════════ 2 ════════ -->
+  <div class="section">
+    <h2><span class="num">2</span>
+      <span>Data We Collect</span>
+    </h2>
+    <h3>Account information</h3>
     <ul>
-      <li>Full name (provided during registration)</li>
-      <li>Email address</li>
-      <li>Password (hashed and encrypted, never stored in plain text)</li>
+      <li>The name you provide</li>
+      <li>Email address (only for email or Google sign-in)</li>
+      <li>A system-generated user identifier</li>
     </ul>
-    <p><strong>Financial data you enter:</strong></p>
+    <p>Guest users provide no information; the system creates a temporary identifier only.</p>
+    <h3>Financial data you enter</h3>
     <ul>
-      <li>Asset details (name, type, value, quantity, cost basis, market price)</li>
-      <li>Debt details (name, type, amount, interest rate)</li>
-      <li>Portfolio names</li>
-      <li>Wealth tracking snapshots</li>
+      <li>Names and values of assets you record</li>
+      <li>Names and balances of liabilities you record</li>
+      <li>Portfolio names and financial goals</li>
+      <li>Change history of your entries</li>
     </ul>
-    <p><strong>Device data (collected automatically):</strong></p>
+
+    <div class="info-box">
+      <p>You enter all of this data yourself. We do not connect to any bank or financial institution, and we do not retrieve data automatically.</p>
+    </div>
+    <h3>Technical data</h3>
     <ul>
-      <li>Crash reports (via Firebase Crashlytics)</li>
-      <li>Device type and operating system</li>
+      <li>Crash reports</li>
+      <li>Device model and operating system version</li>
+      <li>App version in use</li>
     </ul>
-    <p><span class="badge">Important</span> We do NOT collect bank account numbers, credit card details, or any OTP codes.</p>
+    <h3>Usage data</h3>
+    <p>We use Firebase Analytics to understand which features people use. The data sent is aggregated and non-identifying, for example:</p>
+    <ul>
+      <li>Types of assets recorded, such as stocks or gold</li>
+      <li>Approximate item counts as ranges, such as 4-10 items</li>
+      <li>Selected language and theme</li>
+      <li>Sign-up method used</li>
+    </ul>
+
+    <div class="good-box">
+      <p>We never send monetary amounts, the names you assign to items, or any identifying information to our analytics system.</p>
+    </div>
   </div>
 
-  <div class="section" id="s2">
-    <h2><span class="num">2</span> How We Use Information</h2>
-    <p>We use your data to:</p>
+  <!-- ════════ 3 ════════ -->
+  <div class="section">
+    <h2><span class="num">3</span>
+      <span>How We Use Your Data</span>
+    </h2>
+    <table>
+      <tr><th>Data</th><th>Purpose</th></tr>
+      <tr><td>Account information</td><td>Authentication and syncing across devices</td></tr>
+      <tr><td>Financial data</td><td>Displaying it back to you within the app only</td></tr>
+      <tr><td>Crash reports</td><td>Fixing problems and improving stability</td></tr>
+      <tr><td>Usage data</td><td>Deciding which features to build next</td></tr>
+    </table>
+
+    <div class="warning-box">
+      <p>We do not use your financial data for any purpose other than displaying it in the app, and we never disclose it to third parties for marketing.</p>
+    </div>
+  </div>
+
+  <!-- ════════ 4 ════════ -->
+  <div class="section">
+    <h2><span class="num">4</span>
+      <span>Storage and Security</span>
+    </h2>
     <ul>
-      <li>Provide iPortify's core functionality</li>
-      <li>Display your assets, debts, and net worth</li>
-      <li>Record wealth snapshots for trend tracking</li>
-      <li>Send verification and password reset emails</li>
-      <li>Fix technical issues (crash reports)</li>
+      <li>Data is stored on Google Firebase, which holds SOC 2 and ISO 27001 certifications</li>
+      <li>All data in transit is encrypted using TLS/SSL</li>
+      <li>Data is isolated per account; other users cannot access yours</li>
+      <li>We use Firestore security rules to control access at the document level</li>
+      <li>You can enable biometric lock to prevent access by others using the same device</li>
     </ul>
-    <p>We do <strong>NOT</strong> use your data to:</p>
+
+    <div class="info-box">
+      <p>While we use appropriate safeguards, no system is completely secure. Please use a strong password and avoid reusing it across services.</p>
+    </div>
+  </div>
+
+  <!-- ════════ 5 ════════ -->
+  <div class="section">
+    <h2><span class="num">5</span>
+      <span>Third-Party Services</span>
+    </h2>
+    <p>We use the following services, which may process some of your data:</p>
+    <table>
+      <tr><th>Service</th><th>Purpose</th></tr>
+      <tr><td>Firebase Authentication</td><td>Authentication</td></tr>
+      <tr><td>Cloud Firestore</td><td>Data storage</td></tr>
+      <tr><td>Firebase Crashlytics</td><td>Crash reporting</td></tr>
+      <tr><td>Firebase Analytics</td><td>Usage analytics</td></tr>
+      <tr><td>Google Sign-In</td><td>Sign in with Google</td></tr>
+      <tr><td>Google Play Billing</td><td>Payment processing</td></tr>
+    </table>
+    <p>All payments are handled by Google Play. We never see or store your card details.</p>
+  </div>
+
+  <!-- ════════ 6 ════════ -->
+  <div class="section">
+    <h2><span class="num">6</span>
+      <span>Your Rights</span>
+    </h2>
     <ul>
-      <li>Sell to third parties</li>
-      <li>Show targeted advertisements</li>
-      <li>Analyze financial behavior for commercial purposes</li>
+      <li><strong>Access</strong> — View all your data in the app at any time</li>
+      <li><strong>Correct</strong> — Edit or delete any entry yourself</li>
+      <li><strong>Export</strong> — Pro users can export data to Excel or CSV</li>
+      <li><strong>Delete</strong> — Delete your account and all data from within the app</li>
+      <li><strong>Withdraw consent</strong> — Stop using the service and uninstall at any time</li>
     </ul>
+    <h3>How to delete your data</h3>
+    <p>Go to Settings &gt; Delete Account within the app. All data is permanently deleted immediately and cannot be recovered. See the Account Deletion page for details.</p>
   </div>
 
-  <div class="section" id="s3">
-    <h2><span class="num">3</span> Storage & Security</h2>
+  <!-- ════════ 7 ════════ -->
+  <div class="section">
+    <h2><span class="num">7</span>
+      <span>Data Retention</span>
+    </h2>
     <ul>
-      <li>All data is stored on <strong>Google Firebase</strong> (Firestore), which complies with SOC 2 and ISO 27001</li>
-      <li>All communications use <strong>TLS/SSL</strong> encryption</li>
-      <li>Passwords are hashed via Firebase Authentication (bcrypt/scrypt)</li>
-      <li>Financial data is isolated per User ID — other users cannot access your data</li>
-      <li>Firestore Security Rules enforce owner-only access</li>
+      <li>Account and financial data — retained while your account remains active</li>
+      <li>When you delete your account — removed immediately and permanently</li>
+      <li>Crash reports — retained for approximately 90 days per Crashlytics defaults</li>
+      <li>Non-identifying usage data — retained per Firebase Analytics defaults</li>
     </ul>
   </div>
 
-  <div class="section" id="s4">
-    <h2><span class="num">4</span> Information Sharing</h2>
-    <p>We will <strong>never sell, rent, or share</strong> your personal data with third parties, except:</p>
-    <ul>
-      <li><strong>Service providers:</strong> Google Firebase (data storage and authentication)</li>
-      <li><strong>Legal requirements:</strong> When required by court order or law enforcement with proper authority</li>
-    </ul>
+  <!-- ════════ 8 ════════ -->
+  <div class="section">
+    <h2><span class="num">8</span>
+      <span>Minors</span>
+    </h2>
+    <p>This app is intended for people aged 18 and over. We do not knowingly collect data from minors. If you believe a minor has provided us with data, please contact us so we can remove it.</p>
   </div>
 
-  <div class="section" id="s5">
-    <h2><span class="num">5</span> Your Rights</h2>
-    <p>You have the right to:</p>
-    <ul>
-      <li><strong>Access:</strong> View all your data anytime through the app</li>
-      <li><strong>Modify:</strong> Edit your assets, debts, and profile at any time</li>
-      <li><strong>Delete:</strong> Permanently delete your account from "Settings" → "Delete Account"</li>
-      <li><strong>Export:</strong> (Coming soon) Export your data as PDF/CSV</li>
-    </ul>
-    <p>When you delete your account, all data is permanently removed from our systems within 30 days.</p>
+  <!-- ════════ 9 ════════ -->
+  <div class="section">
+    <h2><span class="num">9</span>
+      <span>Changes to This Policy</span>
+    </h2>
+    <p>We may update this policy from time to time. For material changes, we will provide at least 7 days' notice through the app or by email.</p>
   </div>
 
-  <div class="section" id="s6">
-    <h2><span class="num">6</span> Cookies & Tracking</h2>
-    <p>iPortify does <strong>not use cookies</strong> to track users. We only use:</p>
-    <ul>
-      <li><strong>Firebase Crashlytics:</strong> Crash data for fixing technical issues</li>
-      <li><strong>SharedPreferences:</strong> Local-only storage for language and theme settings (never sent to server)</li>
-    </ul>
+  <!-- ════════ 10 ════════ -->
+  <div class="section">
+    <h2><span class="num">10</span>
+      <span>Contact Us</span>
+    </h2>
+    <p>If you have questions about this policy or wish to exercise your rights, please contact us:</p>
+    <p><a href="mailto:support@iportify.app" style="color: var(--accent); text-decoration: none; font-weight: 600;">support@iportify.app</a></p>
   </div>
 
-  <div class="section" id="s7">
-    <h2><span class="num">7</span> Policy Changes</h2>
-    <p>We may update this policy periodically. If significant changes are made, we will notify you via the app or email.</p>
-    <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
-  </div>
-
-  <div class="section" id="s8">
-    <h2><span class="num">8</span> Contact Us</h2>
-    <p>If you have questions about this policy, contact us at:</p>
-    <ul>
-      <li>Email: <strong>parameterprogrammer@gmail.com</strong></li>
-    </ul>
-  </div>
-
-  <div class="links">
-    <a href="terms.html">📄 Terms of Service</a>
-  </div>
-
+  <p class="updated">
+    <span>Effective from 1 September 2026</span>
+  </p>
 </div>
 
 <div class="footer">
-  <p>© 2026 iPortify. All rights reserved.</p>
+  <!-- Replace YOUR_USERNAME with your actual GitHub username in both links -->
+  <div class="footer-links">
+    <a href="https://YOUR_USERNAME.github.io/iportify-privacy/en/terms.html">
+      <span>Terms of Service</span>
+    </a>
+    <a href="https://YOUR_USERNAME.github.io/iportify-privacy/delete.html">
+      <span>Account Deletion</span>
+    </a>
+  </div>
+  <p>© 2026 iPortify</p>
 </div>
+
 
 </body>
 </html>
